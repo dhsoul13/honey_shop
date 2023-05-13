@@ -1,4 +1,6 @@
 import ReactDOM from 'react-dom/client';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './router';
 
 import App from './App';
 
@@ -9,6 +11,6 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <>
-    <App />
+    <RouterProvider router={router} />
   </>
 );
