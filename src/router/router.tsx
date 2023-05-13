@@ -1,6 +1,6 @@
 import { Outlet, createBrowserRouter } from 'react-router-dom';
 import { devroutes, routes } from './routes';
-import { Header } from 'src/components';
+import { Footer, Header } from 'src/components';
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +30,20 @@ export const router = createBrowserRouter([
               }}
             >
               <Header />
+            </div>
+          </div>
+        ),
+      },
+      {
+        path: devroutes.footer.path,
+        element: (
+          <div
+            style={{
+              backgroundColor: '#ffd057',
+            }}
+          >
+            <div>
+              <Footer />
             </div>
           </div>
         ),

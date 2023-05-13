@@ -36,4 +36,8 @@ export const devroutes: Record<string, IRoutes> = {
     visibleNameRouter: 'Header',
     path: '/dev/header',
   },
+  footer: {
+    visibleNameRouter: 'Footer',
+    path: '/dev/footer',
+  },
 };
