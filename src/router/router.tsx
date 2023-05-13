@@ -1,19 +1,22 @@
 import { Outlet, createBrowserRouter } from 'react-router-dom';
 import { devroutes, routes } from './routes';
 import { Footer, Header } from 'src/components';
+import { MainLayout } from 'src/components/layout/MainLauout';
 
 export const router = createBrowserRouter([
   {
     path: routes.home.path,
-    element: <div>Hello world!</div>,
+    element: <MainLayout />,
+    children: [
+      {
+        index: true,
+        element: <>Hello World</>,
+      },
+    ],
   },
   {
     path: routes.dev.path,
-    element: (
-      <>
-        <Outlet />
-      </>
-    ),
+    element: <MainLayout />,
     children: [
       {
         path: devroutes.header.path,

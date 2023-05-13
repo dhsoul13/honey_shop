@@ -1,0 +1,12 @@
+@import 'src/styles/global.scss';
+
+.layout {
+  height: 100vh;
+  background-color: $primary;
+  display: flex;
+  flex-direction: column;
+
+  .layout__content {
+    flex: 1;
+  }
+}
