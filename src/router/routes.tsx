@@ -25,4 +25,15 @@ export const routes: Record<string, IRoutes> = {
     visibleNameRouter: 'Контакты',
     path: '/contact',
   },
+  dev: {
+    visibleNameRouter: 'Деманстрационная страница',
+    path: '/dev',
+  },
+};
+
+export const devroutes: Record<string, IRoutes> = {
+  header: {
+    visibleNameRouter: 'Header',
+    path: '/dev/header',
+  },
 };
