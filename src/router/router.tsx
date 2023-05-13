@@ -2,6 +2,7 @@ import { Outlet, createBrowserRouter } from 'react-router-dom';
 import { devroutes, routes } from './routes';
 import { Footer, Header } from 'src/components';
 import { MainLayout } from 'src/components/layout/MainLauout';
+import { DevLayout } from 'src/components/layout/DevLayout';
 
 export const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ export const router = createBrowserRouter([
   },
   {
     path: routes.dev.path,
-    element: <MainLayout />,
+    element: <DevLayout />,
     children: [
       {
         path: devroutes.header.path,
@@ -26,14 +27,7 @@ export const router = createBrowserRouter([
               backgroundColor: '#ffd057',
             }}
           >
-            <div
-              style={{
-                width: '1140px',
-                margin: '0px auto',
-              }}
-            >
-              <Header />
-            </div>
+            <Header />
           </div>
         ),
       },
