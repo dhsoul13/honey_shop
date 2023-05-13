@@ -17,7 +17,22 @@ export const router = createBrowserRouter([
     children: [
       {
         path: devroutes.header.path,
-        element: <Header />,
+        element: (
+          <div
+            style={{
+              backgroundColor: '#ffd057',
+            }}
+          >
+            <div
+              style={{
+                width: '1140px',
+                margin: '0px auto',
+              }}
+            >
+              <Header />
+            </div>
+          </div>
+        ),
       },
     ],
   },

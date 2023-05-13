@@ -6,7 +6,19 @@ $secondary: #3c270d;
 $color_type_1: $secondary;
 $color_type_2: #fff;
 
+$effect: 0.3s ease all;
+
 %container {
   max-width: 1140px;
   margin: 0 auto;
+}
+
+%link_hover {
+  color: $primary;
+  transition: $effect;
+}
+
+%link_active {
+  color: $primary;
+  transition: $effect;
 }

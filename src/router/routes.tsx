@@ -26,7 +26,7 @@ export const routes: Record<string, IRoutes> = {
     path: '/contact',
   },
   dev: {
-    visibleNameRouter: 'Деманстрационная страница',
+    visibleNameRouter: 'Демрнстрационная страница',
     path: '/dev',
   },
 };

@@ -1,0 +1,65 @@
+@import 'src/styles/global.scss';
+
+.header {
+  padding: 30px 0px;
+  .header_top {
+    * {
+      display: block;
+      color: $color_type_2;
+    }
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 30px;
+    margin-bottom: 30px;
+  }
+
+  .header_middle {
+    position: relative;
+
+    .header__logo {
+      position: absolute;
+      top: 50%;
+      left: 50px;
+      transform: translate(0, -50%);
+      width: 150px;
+      height: 100px;
+      background: #3c270d;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: $color_type_2;
+    }
+    .header_content_list {
+      padding: 30px 0px 30px;
+      display: flex;
+
+      background-color: $color_type_2;
+      border-radius: 30px;
+
+      .header__list {
+        display: flex;
+        margin-left: calc(50px + 150px + 10px);
+        margin-right: 50px;
+        justify-content: flex-end;
+        width: 100%;
+
+        .header__link {
+          margin-right: 15px;
+          color: $color_type_1;
+          cursor: pointer;
+          &:hover {
+            @extend %link_hover;
+          }
+          &:active {
+            @extend %link_active;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
