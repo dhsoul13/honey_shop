@@ -19,8 +19,12 @@
   &:global(.ant-btn-link) {
     color: $primary;
     width: fit-content;
+    height: fit-content !important;
+    min-height: fit-content;
+    padding: 0;
+    color: $color_type_1;
     &:hover {
-      color: $color_type_1;
+      color: $primary;
     }
   }
 }
