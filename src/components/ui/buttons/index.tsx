@@ -1,11 +1,11 @@
 import { Button } from 'antd';
-import { BaseButtonProps } from 'antd/es/button/button';
+import { ButtonProps } from 'antd/es/button/button';
 import React from 'react';
 
 import styles from './buttons.module.scss';
 import clsx from 'clsx';
 
-interface IMainButton extends BaseButtonProps {
+interface IMainButton extends ButtonProps {
   children: React.ReactNode;
   type?: 'primary' | 'default' | 'link';
 }
