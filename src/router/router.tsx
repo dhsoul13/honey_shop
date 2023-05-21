@@ -4,6 +4,7 @@ import { Footer, Header } from 'src/components';
 import { MainLayout } from 'src/components/layout/MainLauout';
 import { DevLayout } from 'src/components/layout/DevLayout';
 import { MainButton } from 'src/components/ui/buttons';
+import { ShopScreen } from 'src/components/screen';
 
 export const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <>Hello World</>,
+      },
+      {
+        path: routes.shop.path,
+        element: <ShopScreen />,
       },
     ],
   },

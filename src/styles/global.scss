@@ -13,6 +13,13 @@ $effect: 0.3s ease all;
   margin: 0 auto;
 }
 
+%container_with_white-bg {
+  max-width: 1140px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 30px;
+}
+
 %link_hover {
   color: $primary;
   transition: $effect;

@@ -9,9 +9,9 @@ export const routes: Record<string, IRoutes> = {
     path: '/',
   },
   about: { visibleNameRouter: 'О нас', path: './about' },
-  product: {
+  shop: {
     visibleNameRouter: 'Наша продукция',
-    path: '/product',
+    path: '/shop',
   },
   place: {
     visibleNameRouter: 'Наши пасики',
