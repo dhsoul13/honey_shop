@@ -21,6 +21,38 @@ export const router = createBrowserRouter([
     element: <DevLayout />,
     children: [
       {
+        index: true,
+        element: (
+          <>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <MainButton
+                type="link"
+                href={devroutes.button.path}
+              >
+                {devroutes.button.visibleNameRouter}
+              </MainButton>
+              <MainButton
+                type="link"
+                href={devroutes.header.path}
+              >
+                {devroutes.header.visibleNameRouter}
+              </MainButton>
+              <MainButton
+                type="link"
+                href={devroutes.footer.path}
+              >
+                {devroutes.footer.visibleNameRouter}
+              </MainButton>
+            </div>
+          </>
+        ),
+      },
+      {
         path: devroutes.header.path,
         element: (
           <div
