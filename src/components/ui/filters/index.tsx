@@ -1,9 +1,26 @@
-import { SearchInput } from '../input';
+import { Form } from 'antd';
+import { SearchInput, SelectInput, SliderInput } from '../input';
+
+import styles from './filters.module.scss';
 
 export const FiltersProduct = () => {
   return (
-    <>
-      <SearchInput />
-    </>
+    <Form className={styles.form}>
+      <div className={styles.search}>
+        <SearchInput placeholder="Поиск по названию" />
+      </div>
+      <div className={styles.other_elem}>
+        <SelectInput placeholder="Сорт меда" />
+        <SelectInput placeholder="Oбъем банки" />
+        <div>
+          <h2>Диапазон цен</h2>
+          <SliderInput
+            range
+            min={0}
+            max={10000}
+          />
+        </div>
+      </div>
+    </Form>
   );
 };

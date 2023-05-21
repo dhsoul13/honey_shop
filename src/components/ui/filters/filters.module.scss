@@ -1,0 +1,19 @@
+@import 'src/styles/global.scss';
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+
+  .other_elem {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px 30px;
+  }
+  &:hover {
+    border-color: $primary;
+    transition: $effect;
+  }
+}
