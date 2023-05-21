@@ -3,6 +3,7 @@ import { devroutes, routes } from './routes';
 import { Footer, Header } from 'src/components';
 import { MainLayout } from 'src/components/layout/MainLauout';
 import { DevLayout } from 'src/components/layout/DevLayout';
+import { MainButton } from 'src/components/ui/buttons';
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +43,22 @@ export const router = createBrowserRouter([
             <div>
               <Footer />
             </div>
+          </div>
+        ),
+      },
+      {
+        path: devroutes.button.path,
+        element: (
+          <div
+            style={{
+              gap: '30px',
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+          >
+            <MainButton type="primary">Text</MainButton>
+            <MainButton type="default">Text</MainButton>
+            <MainButton type="link">Text</MainButton>
           </div>
         ),
       },

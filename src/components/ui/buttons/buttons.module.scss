@@ -1,0 +1,26 @@
+@import 'src/styles/global.scss';
+
+.btn {
+  border-radius: 30px;
+  width: 100%;
+  min-height: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  &:global(.ant-btn-primary) {
+    background-color: #fff;
+    border-color: $primary;
+    color: $primary;
+    &:hover {
+      color: $color_type_1;
+    }
+  }
+
+  &:global(.ant-btn-link) {
+    color: $primary;
+    width: fit-content;
+    &:hover {
+      color: $color_type_1;
+    }
+  }
+}

@@ -40,4 +40,8 @@ export const devroutes: Record<string, IRoutes> = {
     visibleNameRouter: 'Footer',
     path: '/dev/footer',
   },
+  button: {
+    visibleNameRouter: 'Button',
+    path: '/dev/button',
+  },
 };
