@@ -1,6 +1,6 @@
 export const demoCardContent: Array<IRequestElement> = [
   {
-    count: 5,
+    count: 0,
     id: 333,
     info: '44',
     price: '4242',
