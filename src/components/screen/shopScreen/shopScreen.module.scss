@@ -7,4 +7,11 @@
   .content {
     padding: 30px;
   }
+
+  .shops {
+    margin: 30px 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px;
+  }
 }
