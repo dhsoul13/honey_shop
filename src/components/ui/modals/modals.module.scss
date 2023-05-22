@@ -8,6 +8,28 @@
     box-shadow: 0px 9px 46px 5px rgba($primary, 0.5);
   }
 
+  :global(.ant-modal-close) {
+    &:hover {
+      background-color: inherit;
+    }
+    &:active {
+      background-color: inherit;
+    }
+    &:focus {
+      background-color: inherit;
+    }
+  }
+
+  :global(.ant-modal-close-icon) {
+    font-size: 25px;
+    &:hover {
+      color: $color_type_1;
+    }
+    &:active {
+      color: $color_type_1;
+    }
+  }
+
   .title {
     font-size: 25px;
   }
@@ -69,6 +91,10 @@
       font-size: 25px;
     }
     margin: 20px 0px;
+  }
+
+  .block__price {
+    justify-self: flex-end;
   }
 
   .count {

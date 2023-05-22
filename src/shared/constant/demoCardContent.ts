@@ -2,10 +2,10 @@ export const demoCardContent: Array<IRequestElement> = [
   {
     count: 5,
     id: 333,
-    info: '44',
+    info: 'Очент вкусный мед. Добываетя в августе. лвлылвылылвылдвылдывлдывлдвылдвлыдвл',
     price: '4242',
     tegs: ['липовый мед'],
-    title: 'K',
+    title: 'Липовый мед',
     volume: '3',
   },
   {
