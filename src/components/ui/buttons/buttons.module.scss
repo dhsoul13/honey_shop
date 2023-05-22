@@ -26,11 +26,17 @@
     min-height: fit-content;
     padding: 0;
     color: $color_type_1;
+    text-transform: none;
+    background-color: inherit;
+    border: none;
     &:hover {
       color: $primary;
+      background-color: inherit;
+      border: none;
     }
-    &:disabled {
-      @extend %disable_link;
-    }
+  }
+
+  &:global(.ant-btn-link.ant-btn-disabled) {
+    @extend %disable_link;
   }
 }

@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { headerLink } from './constant';
 import styles from './header.module.scss';
+import { MainButton } from '../buttons';
 
 export const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -18,14 +19,14 @@ export const Header: React.FC = () => {
           <div className={styles.header_content_list}>
             <div className={styles.header__list}>
               {headerLink.map((el) => (
-                <h2
-                  className={styles.header__link}
-                  onClick={() => {
-                    navigate(el.link);
-                  }}
+                <MainButton
+                  cn={styles.header__link}
+                  type="link"
+                  href={el.link}
+                  disabled={el.disable}
                 >
                   {el.title}
-                </h2>
+                </MainButton>
               ))}
             </div>
           </div>
