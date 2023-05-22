@@ -8,16 +8,18 @@ import clsx from 'clsx';
 interface IMainButton extends ButtonProps {
   children: React.ReactNode;
   type?: 'primary' | 'default' | 'link';
+  cn?: string | undefined;
 }
 
 export const MainButton: React.FC<IMainButton> = ({
   children,
   type = 'primary',
+  cn,
   ...props
 }) => {
   return (
     <Button
-      className={clsx(styles.btn, props.className)}
+      className={clsx(cn, styles.btn)}
       type={type}
       {...props}
     >

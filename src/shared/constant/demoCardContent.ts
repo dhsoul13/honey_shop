@@ -9,7 +9,7 @@ export const demoCardContent: Array<IRequestElement> = [
     volume: '3',
   },
   {
-    count: 333,
+    count: 2,
     id: 333,
     info: '44',
     price: '4242',
