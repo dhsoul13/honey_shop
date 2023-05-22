@@ -1,0 +1,3 @@
+interface IModalCard {
+  content: IRequestElement;
+}
