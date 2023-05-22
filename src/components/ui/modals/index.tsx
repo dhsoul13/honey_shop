@@ -16,16 +16,23 @@ const TextForButtonFromStatus: React.FC<{ status: TStatusUseCount }> = ({
   }
 };
 
-export const ModalCard: React.FC<IModalCard> = ({ content }) => {
+export const ModalCard: React.FC<IModalCard> = ({
+  content,
+  onChangeActiveOnClick = () => {},
+  isActive = false,
+}) => {
   const [count, addFunc, delFunc, status] = UseCount({
     availableCount: content.count,
   });
 
+  console.log(content);
+
   return (
     <Modal
       className={clsx(styles.modal, styles.modal_card)}
-      open={true}
+      open={isActive}
       footer={false}
+      onCancel={onChangeActiveOnClick}
     >
       <h2 className={styles.title}>{content.title}</h2>
       <div className={styles.modal_card_imgs}>

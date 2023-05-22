@@ -11,6 +11,7 @@
   padding: 15px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   transition: $effect;
+  position: relative;
 
   &.disable {
     cursor: default;
@@ -19,6 +20,14 @@
       cursor: default;
       border: 1px solid rgba(0, 0, 0, 0.2);
     }
+  }
+
+  .btn_show_alert {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    min-height: 45px;
+    border-radius: 70%;
   }
   .img_block {
     margin: 0 auto;
@@ -102,4 +111,12 @@
     border-color: $primary;
     transition: $effect;
   }
+}
+
+.btn_link {
+  margin: 5px auto;
+  span {
+    font-size: 13px !important;
+  }
+  text-transform: lowercase;
 }
