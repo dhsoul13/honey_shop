@@ -1,4 +1,4 @@
-import { IShopCard } from './types';
+import { IShopCard, IShopCardMap } from './types';
 
 import styles from './shopCard.module.scss';
 import { Divider } from 'antd';
@@ -62,5 +62,15 @@ export const ShopCard: React.FC<IShopCard> = ({ content }) => {
         </div>
       </div>
     </div>
+  );
+};
+
+export const ShopCardMap: React.FC<IShopCardMap> = ({ array }) => {
+  return (
+    <>
+      {array.map((content) => (
+        <ShopCard content={content} />
+      ))}
+    </>
   );
 };
