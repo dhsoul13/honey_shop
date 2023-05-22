@@ -40,12 +40,12 @@ export const ModalCard: React.FC<IModalCard> = ({ content }) => {
           <p className={styles.descriptions}>{content.info}</p>
         </div>
         <div className={styles.block}>
-          <h2 className={styles.sub_title}>Объем</h2>
-          <p>{content.volume} л</p>
+          <h2 className={styles.sub_title}>Объем(л):</h2>
+          <p>{content.volume}</p>
         </div>
-        <div className={styles.block}>
-          <h2 className={styles.sub_title}>Цена</h2>
-          <p className={styles.price}>{+content.price * count} р</p>
+        <div className={clsx(styles.block, styles.block__price)}>
+          <h2 className={styles.sub_title}>Цена(Р):</h2>
+          <p className={styles.price}>{+content.price * count}</p>
         </div>
       </div>
       <div className={styles.block_functional}>
