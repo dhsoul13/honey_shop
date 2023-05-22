@@ -1,10 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { devroutes, routes } from './routes';
-import { Footer, Header } from 'src/components';
+import { Footer, Header, ModalCard } from 'src/components';
 import { MainLayout } from 'src/components/layout/MainLauout';
 import { DevLayout } from 'src/components/layout/DevLayout';
 import { MainButton } from 'src/components/ui/buttons';
 import { ShopPage } from 'src/page';
+import { demoCardContent } from 'src/shared/constant/demoCardContent';
 
 export const router = createBrowserRouter([
   {
@@ -53,6 +54,12 @@ export const router = createBrowserRouter([
               >
                 {devroutes.footer.visibleNameRouter}
               </MainButton>
+              <MainButton
+                type="link"
+                href={devroutes.modalCard.path}
+              >
+                {devroutes.modalCard.visibleNameRouter}
+              </MainButton>
             </div>
           </>
         ),
@@ -97,6 +104,14 @@ export const router = createBrowserRouter([
             <MainButton type="default">Text</MainButton>
             <MainButton type="link">Text</MainButton>
           </div>
+        ),
+      },
+      {
+        path: devroutes.modalCard.path,
+        element: (
+          <>
+            <ModalCard content={demoCardContent[0]} />
+          </>
         ),
       },
     ],

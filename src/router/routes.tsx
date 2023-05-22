@@ -44,4 +44,8 @@ export const devroutes: Record<string, IRoutes> = {
     visibleNameRouter: 'Button',
     path: '/dev/button',
   },
+  modalCard: {
+    visibleNameRouter: 'Модальное окно для карточки',
+    path: '/dev/modalCard',
+  },
 };
