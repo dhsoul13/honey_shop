@@ -64,25 +64,7 @@
           width: 100%;
 
           .header__link {
-            font-style: normal;
-            font-style: normal;
-            font-weight: 700;
-
-            line-height: 17px;
-            color: $color_type_1;
-            cursor: pointer;
-            margin-right: 15px;
-            color: $color_type_1;
-            cursor: pointer;
-            &:hover {
-              @extend %link_hover;
-            }
-            &:active {
-              @extend %link_active;
-            }
-            &:last-child {
-              margin-right: 0;
-            }
+            margin-right: 10px;
           }
         }
       }
