@@ -19,6 +19,10 @@ export const routes: TRoutes = {
     visibleNameRouter: 'Демрнстрационная страница',
     path: '/dev',
   },
+  404: {
+    visibleNameRouter: 'Страница 404',
+    path: '*',
+  },
 };
 
 export const devroutes: TRoutesDev = {

@@ -12,3 +12,7 @@ type TUseActiveModalCardShop = () => {
   isActive: boolean;
   changeActiveOnClick: () => void;
 };
+
+type TUseRedirect = () => {
+  redirectOnClick: () => void;
+};

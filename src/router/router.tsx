@@ -6,6 +6,7 @@ import { DevLayout } from 'src/components/layout/DevLayout';
 import { MainButton } from 'src/components/ui/buttons';
 import { ShopPage } from 'src/page';
 import { demoCardContent } from 'src/shared/constant/demoCardContent';
+import { Page404 } from 'src/page/404Page';
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ export const router = createBrowserRouter([
       {
         path: routes.shop.path,
         element: <ShopPage />,
+      },
+      {
+        path: routes['404'].path,
+        element: <Page404 />,
       },
     ],
   },
