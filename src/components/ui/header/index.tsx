@@ -2,6 +2,17 @@ import { useNavigate } from 'react-router-dom';
 import { headerLink } from './constant';
 import styles from './header.module.scss';
 import { MainButton } from '../buttons';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+
+const RenderSvgWithoutAuth: React.FC<{ isAuth?: boolean }> = ({
+  isAuth = true,
+}) => {
+  if (isAuth) {
+    return <UserOutlined className={styles.link_svg} />;
+  } else {
+    return <LockOutlined className={styles.link_svg} />;
+  }
+};
 
 export const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -28,6 +39,12 @@ export const Header: React.FC = () => {
                   {el.title}
                 </MainButton>
               ))}
+              <MainButton
+                cn={styles.header_authenticator}
+                type="link"
+              >
+                <RenderSvgWithoutAuth />
+              </MainButton>
             </div>
           </div>
         </div>

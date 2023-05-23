@@ -1,3 +1,5 @@
+import { routes } from 'src/router';
+
 interface IHeaderLink {
   title: string;
   link: string;
@@ -6,23 +8,18 @@ interface IHeaderLink {
 
 export const headerLink: Array<IHeaderLink> = [
   {
-    title: 'О нас',
-    link: '/dev/header',
-    disable: true,
-  },
-  {
-    title: 'Наша продукция',
-    link: `./shop`,
+    title: 'Магазин',
+    link: '/shop',
     disable: false,
   },
   {
     title: 'О меде',
-    link: '/dev/header',
+    link: '/honey',
     disable: true,
   },
   {
     title: 'Контакты',
-    link: '/dev/header',
+    link: '/contact ',
     disable: true,
   },
 ];
