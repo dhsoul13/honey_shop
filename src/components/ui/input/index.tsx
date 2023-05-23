@@ -1,9 +1,18 @@
-import { Input, Select, Slider } from 'antd';
+import { Input, InputProps, Select, Slider } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 
 import styles from './input.module.scss';
 import clsx from 'clsx';
 import { IInputSearch, IInputSelect, IInputSlider } from './types';
+
+export const DefaultInput: React.FC<InputProps> = ({ ...props }) => {
+  return (
+    <Input
+      className={clsx(styles.input, props.className)}
+      {...props}
+    />
+  );
+};
 
 export const SearchInput: React.FC<IInputSearch> = ({ ...props }) => {
   return (

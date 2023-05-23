@@ -1,10 +1,13 @@
-import { Modal } from 'antd';
+import { Form, Modal } from 'antd';
 
 import styles from './modals.module.scss';
 import clsx from 'clsx';
 import { MainButton } from '../buttons';
 import { UseCount } from 'src/utils/hooks/useCount';
 import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
+import { AuthProps } from './constant';
+import { DefaultInput } from '../input';
+import { IModalCard, IModalFormAuthValues, IModalFormRegValues } from './types';
 
 const TextForButtonFromStatus: React.FC<{ status: TStatusUseCount }> = ({
   status,
@@ -89,6 +92,70 @@ export const ModalCard: React.FC<IModalCard> = ({
           <TextForButtonFromStatus status={status} />
         </MainButton>
       </div>
+    </Modal>
+  );
+};
+
+///Authentically
+
+const ModalsAuthenticallyTitleRender: React.FC<{ type?: 'auth' | 'reg' }> = ({
+  type = 'auth',
+}) => {
+  if (type === 'auth') {
+    return <>Авторизация</>;
+  } else {
+    return <>Регистрация</>;
+  }
+};
+
+const AuthContent: React.FC = () => {
+  const { Item } = Form;
+  return (
+    <>
+      {AuthProps.map((prob) => (
+        <>
+          <h2 className={styles.title_input}>{prob.visibleText}</h2>
+          <Item
+            key={prob.name}
+            name={prob.name}
+            rules={prob.rules}
+          >
+            <DefaultInput type={prob.type} />
+          </Item>
+        </>
+      ))}
+    </>
+  );
+};
+
+export const ModalsAuthentically: React.FC = () => {
+  const onFinish = (values: IModalFormAuthValues | IModalFormRegValues) => {
+    alert(JSON.stringify(values));
+  };
+
+  return (
+    <Modal
+      className={clsx(styles.modal, styles.modal_authentically)}
+      open={true}
+      footer={false}
+    >
+      <h2 className={clsx(styles.title, styles.title_authentically)}>
+        <ModalsAuthenticallyTitleRender />
+      </h2>
+      <Form<IModalFormAuthValues | IModalFormRegValues>
+        name="basic"
+        className={styles.form}
+        onFinish={onFinish}
+      >
+        <AuthContent />
+        <MainButton
+          cn={styles.btn_form}
+          type="primary"
+          htmlType="submit"
+        >
+          Авторизация
+        </MainButton>
+      </Form>
     </Modal>
   );
 };

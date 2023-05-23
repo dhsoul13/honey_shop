@@ -1,5 +1,10 @@
 type TRouterName = 'home' | 'shop' | 'honey' | 'contact' | 'dev' | '404';
-type TRouterDevName = 'header' | 'footer' | 'button' | 'modalCard';
+type TRouterDevName =
+  | 'header'
+  | 'footer'
+  | 'button'
+  | 'modalCard'
+  | 'ModalsAuthentically';
 
 interface IRoute {
   visibleNameRouter: string;
