@@ -50,7 +50,7 @@
         color: $color_type_2;
       }
       .header_content_list {
-        padding: 30px 0px 30px;
+        padding: 20px 0px 20px;
         display: flex;
 
         background-color: $color_type_2;
@@ -62,9 +62,17 @@
           margin-right: 50px;
           justify-content: flex-end;
           width: 100%;
+          align-items: center;
 
           .header__link {
             margin-right: 10px;
+          }
+
+          .header_authenticator {
+            margin-left: 15px;
+            .link_svg {
+              font-size: 25px;
+            }
           }
         }
       }

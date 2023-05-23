@@ -1,21 +1,11 @@
-interface IRoutes {
-  visibleNameRouter: string;
-  path: string;
-}
-
-export const routes: Record<string, IRoutes> = {
+export const routes: TRoutes = {
   home: {
     visibleNameRouter: 'Главная страница',
     path: '/',
   },
-  about: { visibleNameRouter: 'О нас', path: './about' },
   shop: {
     visibleNameRouter: 'Наша продукция',
     path: '/shop',
-  },
-  place: {
-    visibleNameRouter: 'Наши пасики',
-    path: '/place',
   },
   honey: {
     visibleNameRouter: 'О меде',
@@ -31,7 +21,7 @@ export const routes: Record<string, IRoutes> = {
   },
 };
 
-export const devroutes: Record<string, IRoutes> = {
+export const devroutes: TRoutesDev = {
   header: {
     visibleNameRouter: 'Header',
     path: '/dev/header',
