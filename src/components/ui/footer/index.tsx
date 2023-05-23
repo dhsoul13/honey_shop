@@ -28,10 +28,7 @@ export const Footer = () => {
             className={clsx(styles.footer_text, styles.col)}
             span={24}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
-            molestiae! Cumque, rem dignissimos. Maxime tenetur aperiam natus,
-            hic sunt et amet inventore quas, harum temporibus rem magnam
-            voluptates ad recusandae!
+            The work of {'\u00A9'} dhsoul13
           </Col>
         </Row>
       </div>

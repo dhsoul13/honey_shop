@@ -5,19 +5,15 @@ interface IFooterLink {
 
 export const footerLink: Array<IFooterLink> = [
   {
-    title: 'О нас',
-    link: '/dev/header',
-  },
-  {
-    title: 'Наша продукция',
-    link: '/dev/header',
+    title: 'Наша магазин',
+    link: '/shop',
   },
   {
     title: 'О меде',
-    link: '/dev/header',
+    link: '/honey',
   },
   {
     title: 'Контакты',
-    link: '/dev/header',
+    link: '/contact',
   },
 ];
