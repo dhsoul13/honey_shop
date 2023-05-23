@@ -1,4 +1,4 @@
-type TRouterName = 'home' | 'shop' | 'honey' | 'contact' | 'dev' | string;
+type TRouterName = 'home' | 'shop' | 'honey' | 'contact' | 'dev' | '404';
 type TRouterDevName = 'header' | 'footer' | 'button' | 'modalCard';
 
 interface IRoute {
