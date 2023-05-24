@@ -42,4 +42,8 @@ export const devroutes: TRoutesDev = {
     visibleNameRouter: 'Модальное окно для карточки',
     path: '/dev/modalCard',
   },
+  ModalsAuthentically: {
+    visibleNameRouter: 'Модальное окно для авторизации и регистрации',
+    path: '/dev/modalAuthentically',
+  },
 };

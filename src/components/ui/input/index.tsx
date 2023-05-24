@@ -1,18 +1,34 @@
-import { Input, Select, Slider } from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
+import { Input, InputProps, Select, Slider } from 'antd';
 
 import styles from './input.module.scss';
 import clsx from 'clsx';
-import { IInputSearch, IInputSelect, IInputSlider } from './types';
+import { IInputSelect, IInputSlider } from './types';
+import { useState } from 'react';
 
-export const SearchInput: React.FC<IInputSearch> = ({ ...props }) => {
-  return (
-    <Input
-      suffix={<SearchOutlined />}
-      className={clsx(styles.input, props.className)}
-      {...props}
-    />
-  );
+export const DefaultInput: React.FC<InputProps> = ({
+  type = 'text',
+  ...props
+}) => {
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  if (type === 'password') {
+    return (
+      <Input.Password
+        {...props}
+        className={clsx(styles.input, props.className)}
+        visibilityToggle={{
+          visible: passwordVisible,
+          onVisibleChange: setPasswordVisible,
+        }}
+      />
+    );
+  } else {
+    return (
+      <Input
+        {...props}
+        className={clsx(styles.input, props.className)}
+      />
+    );
+  }
 };
 
 export const SelectInput: React.FC<IInputSelect> = ({ ...props }) => {

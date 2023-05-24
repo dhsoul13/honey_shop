@@ -3,19 +3,32 @@ import { headerLink } from './constant';
 import styles from './header.module.scss';
 import { MainButton } from '../buttons';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { useDispatch } from 'react-redux';
+import { isShowModal } from 'src/store/slices/modal-slice';
 
-const RenderSvgWithoutAuth: React.FC<{ isAuth?: boolean }> = ({
-  isAuth = true,
-}) => {
+const RenderSvgWithoutAuth: React.FC<{
+  isAuth?: boolean;
+  action?: () => void;
+}> = ({ isAuth = false, action = () => {} }) => {
   if (isAuth) {
     return <UserOutlined className={styles.link_svg} />;
   } else {
-    return <LockOutlined className={styles.link_svg} />;
+    return (
+      <LockOutlined
+        className={styles.link_svg}
+        onClick={action}
+      />
+    );
   }
 };
 
 export const Header: React.FC = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const onActiveModal = () => {
+    dispatch(isShowModal({ typeModal: 'AUTH' }));
+  };
 
   return (
     <header className={styles.header}>
@@ -43,7 +56,9 @@ export const Header: React.FC = () => {
                 cn={styles.header_authenticator}
                 type="link"
               >
-                <RenderSvgWithoutAuth />
+                <RenderSvgWithoutAuth
+                  action={true ? onActiveModal : () => {}}
+                />
               </MainButton>
             </div>
           </div>
