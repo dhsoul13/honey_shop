@@ -1,17 +1,32 @@
 import { Outlet } from 'react-router-dom';
-import { Footer, Header, ModalsAuthentically } from 'src/components/ui';
+import {
+  AlertsInfo,
+  Footer,
+  Header,
+  ModalsAuthentically,
+} from 'src/components/ui';
 
 import styles from './mainLayout.module.scss';
 import { useSelector } from 'react-redux';
-import { selectorModalStateActive } from 'src/store/selector';
+import {
+  selectorAlertState,
+  selectorModalStateActive,
+} from 'src/store/selector';
 
 export const MainLayout: React.FC = () => {
   const isActiveModal = useSelector(selectorModalStateActive);
+  const { alertType, isActive, descriptions, message } =
+    useSelector(selectorAlertState);
 
-  console.log(isActiveModal);
   return (
     <>
       <ModalsAuthentically isActive={isActiveModal} />
+      <AlertsInfo
+        isActive={isActive}
+        type={alertType}
+        message={message}
+        description={descriptions}
+      />
       <div className={styles.layout}>
         <div
           style={{
