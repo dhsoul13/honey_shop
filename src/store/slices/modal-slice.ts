@@ -11,10 +11,12 @@ export const modalSlice = createSlice({
   reducers: {
     isShowModal: (
       state: IInitialStateSliceModal,
-      { payload }: PayloadAction<IInitialStateSliceModal>
+      {
+        payload: { typeModal = 'AUTH' },
+      }: PayloadAction<IInitialStateSliceModal>
     ) => {
       state.isActive = true;
-      state.typeModal = payload.typeModal;
+      state.typeModal = typeModal;
     },
     isCloseModal: (state: IInitialStateSliceModal) => {
       state.isActive = false;
@@ -23,6 +25,6 @@ export const modalSlice = createSlice({
   },
 });
 
-export const { isShowModal } = modalSlice.actions;
+export const { isShowModal, isCloseModal } = modalSlice.actions;
 
 export default modalSlice.reducer;

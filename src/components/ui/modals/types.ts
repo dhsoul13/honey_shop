@@ -6,6 +6,18 @@ export interface IModalCard {
   onChangeActiveOnClick?: () => void;
 }
 
+///Modal auth...
+
+export interface IModalsAuthentically {
+  isActive?: boolean;
+}
+
+export interface IContentFromType {
+  type?: TTypeSliceModal;
+  withAuthorization: React.ReactElement | string;
+  withoutAuthorization: React.ReactElement | string;
+}
+
 export interface IModalFormAuthValues {
   email: string;
   password: string;

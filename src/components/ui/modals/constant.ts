@@ -8,11 +8,11 @@ export const AuthProps: Array<IAuthProps> = [
     rules: [
       {
         type: 'email',
-        message: 'The input is not valid E-mail!',
+        message: '',
       },
       {
         required: true,
-        message: 'Please input your E-mail!',
+        message: '',
       },
     ],
   },
@@ -23,7 +23,7 @@ export const AuthProps: Array<IAuthProps> = [
     rules: [
       {
         required: true,
-        message: 'Please input your E-mail!',
+        message: '',
       },
     ],
   },
