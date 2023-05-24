@@ -1,5 +1,5 @@
 import { Form } from 'antd';
-import { SearchInput, SelectInput, SliderInput } from '../input';
+import { SelectInput, SliderInput } from '../input';
 
 import styles from './filters.module.scss';
 
@@ -7,7 +7,7 @@ export const FiltersProduct = () => {
   return (
     <Form className={styles.form}>
       <div className={styles.search}>
-        <SearchInput placeholder="Поиск по названию" />
+        <SelectInput placeholder="Поиск по названию" />
       </div>
       <div className={styles.other_elem}>
         <SelectInput placeholder="Сорт меда" />

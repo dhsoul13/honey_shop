@@ -1,11 +1,11 @@
-import { Form, Modal } from 'antd';
+import { Form, FormInstance, Modal } from 'antd';
 
 import styles from './modals.module.scss';
 import clsx from 'clsx';
 import { MainButton } from '../buttons';
 import { UseCount } from 'src/utils/hooks/useCount';
-import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
-import { AuthProps } from './constant';
+import { EyeOutlined, MinusOutlined, PlusOutlined } from '@ant-design/icons';
+import { AuthProps, RegProps } from './constant';
 import { DefaultInput } from '../input';
 import { IModalCard, IModalFormAuthValues, IModalFormRegValues } from './types';
 
@@ -120,7 +120,10 @@ const AuthContent: React.FC = () => {
             name={prob.name}
             rules={prob.rules}
           >
-            <DefaultInput type={prob.type} />
+            <DefaultInput
+              type={prob.type}
+              placeholder={`Введите ${prob.visibleText}`}
+            />
           </Item>
         </>
       ))}
@@ -128,11 +131,38 @@ const AuthContent: React.FC = () => {
   );
 };
 
-export const ModalsAuthentically: React.FC = () => {
-  const onFinish = (values: IModalFormAuthValues | IModalFormRegValues) => {
-    alert(JSON.stringify(values));
-  };
+const RegContent: React.FC<{
+  form: FormInstance<IModalFormAuthValues | IModalFormRegValues>;
+}> = ({ form }) => {
+  const { Item } = Form;
 
+  return (
+    <>
+      {RegProps.map((prob) => (
+        <div key={prob.name}>
+          <h2 className={styles.title_input}>{prob.visibleText}</h2>
+          <Item
+            key={prob.name}
+            name={prob.name}
+            rules={prob.rules}
+          >
+            <DefaultInput
+              placeholder={`Введите ${prob.visibleText}`}
+              type={prob.type}
+            />
+          </Item>
+        </div>
+      ))}
+    </>
+  );
+};
+
+export const ModalsAuthentically: React.FC = () => {
+  const [form] = Form.useForm<IModalFormAuthValues | IModalFormRegValues>();
+
+  const onFinish = (values: IModalFormAuthValues | IModalFormRegValues) => {
+    console.log(form.getFieldError('username'));
+  };
   return (
     <Modal
       className={clsx(styles.modal, styles.modal_authentically)}
@@ -146,8 +176,13 @@ export const ModalsAuthentically: React.FC = () => {
         name="basic"
         className={styles.form}
         onFinish={onFinish}
+        form={form}
+        initialValues={{}}
+        validateTrigger="click"
+        autoComplete="off"
       >
-        <AuthContent />
+        {/* <AuthContent /> */}
+        <RegContent form={form} />
         <MainButton
           cn={styles.btn_form}
           type="primary"
