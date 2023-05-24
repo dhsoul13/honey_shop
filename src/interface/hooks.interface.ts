@@ -8,7 +8,7 @@ type TUseCount = ({
   availableCount,
 }: IUseCountProps) => [number, () => void, () => void, TStatusUseCount];
 
-type TUseActiveModalCardShop = () => {
+type TUseActiveModalCardShop = (count: TStatusUseCount) => {
   isActive: boolean;
   changeActiveOnClick: () => void;
 };

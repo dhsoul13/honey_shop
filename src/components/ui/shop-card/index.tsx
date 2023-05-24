@@ -18,7 +18,7 @@ export const ShopCard: React.FC<IShopCard> = ({ content }) => {
     availableCount: content.count,
   });
 
-  const { isActive, changeActiveOnClick } = UseActiveModalCardShop();
+  const { isActive, changeActiveOnClick } = UseActiveModalCardShop(status);
 
   return (
     <>
