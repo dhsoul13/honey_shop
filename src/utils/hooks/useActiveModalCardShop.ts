@@ -6,7 +6,7 @@ export const UseActiveModalCardShop: TUseActiveModalCardShop = (status) => {
   const [state, setState] = useState<boolean>(false);
   const dispatch = useDispatch();
 
-  const handlerOnClick = () => {
+  const handlerOnClickWithAlerts = () => {
     if (status === 'not') {
       dispatch(
         isShowAlert({
@@ -21,8 +21,13 @@ export const UseActiveModalCardShop: TUseActiveModalCardShop = (status) => {
     setState((prev) => !prev);
   };
 
+  const handlerOnClickWithoutAlerts = () => {
+    setState((prev) => !prev);
+  };
+
   return {
     isActive: state,
-    changeActiveOnClick: handlerOnClick,
+    changeActiveOnClickWithAlerts: handlerOnClickWithAlerts,
+    changeActiveOnClickWithoutAlerts: handlerOnClickWithoutAlerts,
   };
 };
