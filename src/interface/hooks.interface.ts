@@ -1,19 +1,19 @@
 interface IUseCountProps {
-  availableCount: number | string;
+	availableCount: number | string;
 }
 
 type TStatusUseCount = 'not' | 'available' | 'crowded';
 
 type TUseCount = ({
-  availableCount,
+	availableCount,
 }: IUseCountProps) => [number, () => void, () => void, TStatusUseCount];
 
 type TUseActiveModalCardShop = (count: TStatusUseCount) => {
-  isActive: boolean;
-  changeActiveOnClickWithAlerts: () => void;
-  changeActiveOnClickWithoutAlerts: () => void;
+	isActive: boolean;
+	changeActiveOnClickWithAlerts: () => void;
+	changeActiveOnClickWithoutAlerts: () => void;
 };
 
 type TUseRedirect = () => {
-  redirectOnClick: () => void;
+	redirectOnClick: () => void;
 };

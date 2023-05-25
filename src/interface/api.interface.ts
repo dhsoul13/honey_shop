@@ -1,20 +1,20 @@
 type TPageName =
-  | 'Главная страница'
-  | 'Наша продукция'
-  | 'Наши пасики'
-  | 'О меде'
-  | 'Контакты'
-  | 'Демрнстрационная страница';
+	| 'Главная страница'
+	| 'Наша продукция'
+	| 'Наши пасики'
+	| 'О меде'
+	| 'Контакты'
+	| 'Демрнстрационная страница';
 
 type TTegs = 'липовый мед' | 'цветочный мед';
 
 interface IRequestElement {
-  id: string | number;
-  title: string;
-  info: string;
-  price: string;
-  tegs: Array<TTegs>;
-  count: number | string;
-  volume: '1' | '0,5' | '2' | '3';
-  img?: Array<string>;
+	id: string | number;
+	title: string;
+	info: string;
+	price: string;
+	tegs: Array<TTegs>;
+	count: number | string;
+	volume: '1' | '0,5' | '2' | '3';
+	img?: Array<string>;
 }

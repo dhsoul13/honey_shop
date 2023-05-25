@@ -1,3 +1,3 @@
 interface IPage404 {
-  redirect: () => void;
+	redirect: () => void;
 }

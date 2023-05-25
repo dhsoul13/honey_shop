@@ -1,7 +1,7 @@
 export interface IShopCard {
-  content: IRequestElement;
+	content: IRequestElement;
 }
 
 export interface IShopCardMap {
-  array: Array<IRequestElement>;
+	array: Array<IRequestElement>;
 }

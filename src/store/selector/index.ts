@@ -7,18 +7,18 @@ const selectorDefault = (state: RootState) => state;
 
 ///Modal
 export const selectorModalState = createSelector(
-  selectorDefault,
-  (state) => state.modal
+	selectorDefault,
+	(state) => state.modal
 );
 
 export const selectorModalStateActive = createSelector(
-  selectorDefault,
-  (state): boolean => !!state.modal.isActive
+	selectorDefault,
+	(state): boolean => !!state.modal.isActive
 );
 
 ///Alert
 
 export const selectorAlertState = createSelector(
-  selectorDefault,
-  (state) => state.alert
+	selectorDefault,
+	(state) => state.alert
 );
