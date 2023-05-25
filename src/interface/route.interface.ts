@@ -1,14 +1,14 @@
 type TRouterName = 'home' | 'shop' | 'honey' | 'contact' | 'dev' | '404';
 type TRouterDevName =
-  | 'header'
-  | 'footer'
-  | 'button'
-  | 'modalCard'
-  | 'ModalsAuthentically';
+	| 'header'
+	| 'footer'
+	| 'button'
+	| 'modalCard'
+	| 'ModalsAuthentically';
 
 interface IRoute {
-  visibleNameRouter: string;
-  path: string;
+	visibleNameRouter: string;
+	path: string;
 }
 
 type TRoutes = Record<TRouterName, IRoute>;

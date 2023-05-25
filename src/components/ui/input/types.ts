@@ -2,8 +2,8 @@ import { SelectProps } from 'antd';
 import { SearchProps } from 'antd/es/input';
 import { SliderRangeProps } from 'antd/es/slider';
 
-export interface IInputSearch extends SearchProps {}
+export type IInputSearch = SearchProps;
 
-export interface IInputSelect extends SelectProps {}
+export type IInputSelect = SelectProps;
 
-export interface IInputSlider extends SliderRangeProps {}
+export type IInputSlider = SliderRangeProps;
