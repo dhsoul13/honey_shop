@@ -1,26 +1,26 @@
 @import 'src/styles/global.scss';
 
 .container {
-  @extend %container_with_white-bg;
-  min-height: 400px;
+	@extend %container_with_white-bg;
+	min-height: 400px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px 0px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px 0px;
 
-  .title {
-    font-size: 50px;
-    font-weight: 700;
-    color: $secondary;
-  }
-  .text {
-    font-size: 15px;
-    color: $secondary;
-    opacity: 0.9;
-  }
-  .btn {
-    max-width: 300px;
-  }
+	.title {
+		font-size: 50px;
+		font-weight: 700;
+		color: $secondary;
+	}
+	.text {
+		font-size: 15px;
+		color: $secondary;
+		opacity: 0.9;
+	}
+	.btn {
+		max-width: 300px;
+	}
 }

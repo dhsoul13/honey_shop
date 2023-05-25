@@ -106,7 +106,7 @@ export const router = createBrowserRouter([
 				path: devroutes.ModalsAuthentically.path,
 				element: (
 					<>
-						<ModalsAuthentically isActive={true} />
+						<ModalsAuthentically isActive />
 					</>
 				),
 			},

@@ -85,9 +85,7 @@ export const ModalCard: React.FC<IModalCard> = ({
 				</div>
 				<MainButton
 					disabled={status === 'crowded' || status === 'not'}
-					onClick={() => {
-						alert(1);
-					}}
+					onClick={() => {}}
 				>
 					<TextForButtonFromStatus status={status} />
 				</MainButton>
