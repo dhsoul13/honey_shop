@@ -25,6 +25,10 @@ export const Header: React.FC = () => {
 		dispatch(isShowModal({ typeModal: 'AUTH' }));
 	};
 
+	const onNavigateOnClick = (href: string) => {
+		navigate(href);
+	};
+
 	return (
 		<header className={styles.header}>
 			<div className={styles.header__container}>
@@ -42,8 +46,10 @@ export const Header: React.FC = () => {
 									key={el.title}
 									cn={styles.header__link}
 									type="link"
-									href={el.link}
 									disabled={el.disable}
+									onClick={() => {
+										onNavigateOnClick(el.link);
+									}}
 								>
 									{el.title}
 								</MainButton>

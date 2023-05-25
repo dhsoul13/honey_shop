@@ -1,42 +1,44 @@
 @import 'src/styles/global.scss';
 
 .btn {
-  border-radius: 30px;
-  width: 100%;
-  min-height: 50px;
-  font-weight: 700;
-  text-transform: uppercase;
+	border-radius: 30px;
+	width: 100%;
+	min-height: 50px;
+	font-weight: 700;
+	text-transform: uppercase;
 
-  &:global(.ant-btn-primary) {
-    background-color: #fff;
-    border-color: $primary;
-    color: $primary;
-    &:hover {
-      color: $color_type_1;
-    }
-    &:disabled {
-      @extend %disable;
-    }
-  }
+	&:global(.ant-btn-primary) {
+		background-color: #fff;
+		border-color: $primary;
+		color: $primary;
+		&:hover {
+			color: $color_type_1;
+		}
+		&:disabled {
+			@extend %disable;
+		}
+	}
 
-  &:global(.ant-btn-link) {
-    color: $primary;
-    width: fit-content;
-    height: fit-content !important;
-    min-height: fit-content;
-    padding: 0;
-    color: $color_type_1;
-    text-transform: none;
-    background-color: inherit;
-    border: none;
-    &:hover {
-      color: $primary;
-      background-color: inherit;
-      border: none;
-    }
-  }
+	&:global(.ant-btn-link) {
+		color: $primary;
+		width: fit-content;
+		height: fit-content !important;
+		min-height: fit-content;
+		padding: 0;
+		color: $color_type_1;
+		text-transform: none;
+		background-color: inherit;
+		border: none;
+		&:hover {
+			color: $primary;
+			background-color: inherit;
+			border: none;
+		}
+	}
 
-  &:global(.ant-btn-link.ant-btn-disabled) {
-    @extend %disable_link;
-  }
+	&:global(.ant-btn-link[disabled]) {
+		span {
+			@extend %disable_link;
+		}
+	}
 }
