@@ -10,7 +10,8 @@ type TUseCount = ({
 
 type TUseActiveModalCardShop = (count: TStatusUseCount) => {
   isActive: boolean;
-  changeActiveOnClick: () => void;
+  changeActiveOnClickWithAlerts: () => void;
+  changeActiveOnClickWithoutAlerts: () => void;
 };
 
 type TUseRedirect = () => {

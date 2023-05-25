@@ -18,7 +18,11 @@ export const ShopCard: React.FC<IShopCard> = ({ content }) => {
     availableCount: content.count,
   });
 
-  const { isActive, changeActiveOnClick } = UseActiveModalCardShop(status);
+  const {
+    isActive,
+    changeActiveOnClickWithAlerts,
+    changeActiveOnClickWithoutAlerts,
+  } = UseActiveModalCardShop(status);
 
   return (
     <>
@@ -27,7 +31,7 @@ export const ShopCard: React.FC<IShopCard> = ({ content }) => {
           ...content,
         }}
         isActive={isActive}
-        onChangeActiveOnClick={changeActiveOnClick}
+        onChangeActiveOnClick={changeActiveOnClickWithoutAlerts}
       />
       <div
         className={clsx(
@@ -37,7 +41,7 @@ export const ShopCard: React.FC<IShopCard> = ({ content }) => {
       >
         <MainButton
           className={styles.btn_show_alert}
-          onClick={changeActiveOnClick}
+          onClick={changeActiveOnClickWithAlerts}
         >
           <SearchOutlined />
         </MainButton>
