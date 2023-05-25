@@ -44,6 +44,8 @@
 		"react/jsx-key": "warn",
 		"eslint-disable-next-line": 0,
 		"no-constant-condition": "warn",
-		"new-cap": 0
+		"new-cap": 0,
+		"@typescript-eslint\no-unsafe-member-access": 0,
+		"@typescript-eslint\no-unsafe-assignment": 0
 	}
 }

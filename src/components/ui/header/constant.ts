@@ -20,6 +20,6 @@ export const headerLink: Array<IHeaderLink> = [
 	{
 		title: 'Контакты',
 		link: '/contact ',
-		disable: true,
+		disable: false,
 	},
 ];

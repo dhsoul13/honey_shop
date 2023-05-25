@@ -1,0 +1,105 @@
+@import 'src/styles/global.scss';
+
+.container {
+	* {
+		cursor: pointer;
+	}
+	@extend %container_with_white-bg;
+	min-height: 400px;
+
+	.content {
+		padding: 30px;
+	}
+
+	.grid {
+		margin-bottom: 30px;
+
+		.list {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			background-color: $secondary;
+			border-radius: 30px;
+			padding: 30px;
+
+			gap: 25px;
+
+			li {
+				display: flex;
+				flex-direction: column;
+				gap: 15px;
+				h2 {
+					font-size: 20px;
+					color: $primary;
+				}
+				p {
+					font-size: 15px;
+
+					color: #fff;
+
+					margin-left: 5px;
+				}
+			}
+
+			.svg {
+				display: inline-block;
+				margin-right: 10px;
+
+				:global(.anticon) {
+					font-size: 22px;
+					color: $primary;
+				}
+			}
+		}
+
+		.block_imgs {
+			width: 100%;
+			height: 100%;
+
+			img {
+				width: 100%;
+				height: 100%;
+
+				border-radius: 30px;
+				object-fit: cover;
+			}
+		}
+	}
+
+	.list_nested {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+
+		.li_nested {
+			display: flex !important;
+			flex-direction: row !important;
+			gap: 0px !important;
+			:global(.anticon) {
+				font-size: 22px;
+				fill: $primary;
+			}
+		}
+
+		a {
+			text-decoration: none;
+			color: #fff;
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+}
+
+.map {
+	padding: 40px 30px;
+	background-color: $secondary;
+	border-radius: 30px;
+
+	h2 {
+		font-size: 20px;
+		color: $primary;
+		margin-bottom: 20px;
+	}
+}
