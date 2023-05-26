@@ -18,3 +18,11 @@ interface IRequestElement {
 	volume: '1' | '0,5' | '2' | '3';
 	img?: Array<string>;
 }
+
+interface IRequestNews {
+	id: string | number;
+	title: string;
+	info: string;
+	img?: Array<string>;
+	date: Date;
+}
