@@ -1,6 +1,12 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { devroutes, routes } from './routes';
-import { Footer, Header, ModalCard, ModalsAuthentically } from 'src/components';
+import {
+	CarouselWrapperCustoms,
+	Footer,
+	Header,
+	ModalCard,
+	ModalsAuthentically,
+} from 'src/components';
 import { MainLayout } from 'src/components/layout/MainLauout';
 import { DevLayout } from 'src/components/layout/DevLayout';
 import { MainButton } from 'src/components/ui/buttons';
@@ -61,6 +67,12 @@ export const router = createBrowserRouter([
 							<MainButton type="link" href={devroutes.ModalsAuthentically.path}>
 								{devroutes.ModalsAuthentically.visibleNameRouter}
 							</MainButton>
+							<MainButton
+								type="link"
+								href={devroutes.CarouselWrapperCustom.path}
+							>
+								{devroutes.CarouselWrapperCustom.visibleNameRouter}
+							</MainButton>
 						</div>
 					</>
 				),
@@ -120,6 +132,16 @@ export const router = createBrowserRouter([
 				element: (
 					<>
 						<ModalCard content={demoCardContent[0]} />
+					</>
+				),
+			},
+			{
+				path: devroutes.CarouselWrapperCustom.path,
+				element: (
+					<>
+						{/* <CarouselWrapperCustoms>
+
+							</CarouselWrapperCustoms> */}
 					</>
 				),
 			},
