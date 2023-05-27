@@ -10,7 +10,7 @@ import {
 import { MainLayout } from 'src/components/layout/MainLauout';
 import { DevLayout } from 'src/components/layout/DevLayout';
 import { MainButton } from 'src/components/ui/buttons';
-import { ShopPage } from 'src/page';
+import { MainPage, ShopPage } from 'src/page';
 import { demoCardContent } from 'src/shared/constant/demoCardContent';
 import { Page404 } from 'src/page/404Page';
 import { ContactPage } from 'src/page/ContactPage';
@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
 		children: [
 			{
 				index: true,
-				element: <>Hello World</>,
+				element: <MainPage />,
 			},
 			{
 				path: routes.shop.path,
