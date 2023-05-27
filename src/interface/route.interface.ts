@@ -4,7 +4,8 @@ type TRouterDevName =
 	| 'footer'
 	| 'button'
 	| 'modalCard'
-	| 'ModalsAuthentically';
+	| 'ModalsAuthentically'
+	| 'CarouselWrapperCustom';
 
 interface IRoute {
 	visibleNameRouter: string;

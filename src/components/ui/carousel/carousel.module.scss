@@ -1,0 +1,15 @@
+@import 'src/styles/global.scss';
+
+.carousel {
+	margin: 0;
+	height: 100%;
+	:global(.slick-dots) {
+		li {
+			button {
+				height: 4px;
+				border-radius: 10px;
+				background-color: $color_type_1 !important;
+			}
+		}
+	}
+}
