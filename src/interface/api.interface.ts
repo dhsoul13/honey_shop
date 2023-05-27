@@ -24,5 +24,5 @@ interface IRequestNews {
 	title: string;
 	info: string;
 	img?: Array<string>;
-	date: Date;
+	date: string;
 }

@@ -1,10 +1,17 @@
 import clsx from 'clsx';
 import styles from './mainSreen.module.scss';
 import { Row, Col } from 'antd';
-import { CarouselMain } from 'src/components/ui';
+import {
+	CarouselDefault,
+	CarouselWrapperCustoms,
+	NewCard,
+} from 'src/components/ui';
 import { MainButton } from 'src/components/ui/buttons';
 import imgs from 'src/assets/imgs/bg.title.jpg';
 import { demoNewsCard } from 'src/shared/constant/demoNewsCard';
+
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { SwiperSlide } from 'swiper/react';
 
 export const MainScreen: React.FC = () => {
 	return (
@@ -24,14 +31,14 @@ export const MainScreen: React.FC = () => {
 						</div>
 					</Col>
 					<Col span={12} className={styles.col}>
-						<CarouselMain autoplay>
+						<CarouselDefault autoplay>
 							<div className={styles.col_content_img}>
 								<img src={imgs} />
 							</div>
 							<div>
 								<h2>1313</h2>
 							</div>
-						</CarouselMain>
+						</CarouselDefault>
 					</Col>
 				</Row>
 			</article>
@@ -40,13 +47,13 @@ export const MainScreen: React.FC = () => {
 					<h2 className={styles.title}>Наши новости:</h2>
 					<Row>
 						<Col span={24}>
-							<CarouselMain>
-								{demoNewsCard?.map((newEl) => (
-									<div key={newEl.id}>
-										<h2>{newEl.title}</h2>
-									</div>
+							<CarouselWrapperCustoms slidesPerView={3} spaceBetween={'30'}>
+								{demoNewsCard.map((news) => (
+									<SwiperSlide>
+										<NewCard content={news} />
+									</SwiperSlide>
 								))}
-							</CarouselMain>
+							</CarouselWrapperCustoms>
 						</Col>
 					</Row>
 				</div>
