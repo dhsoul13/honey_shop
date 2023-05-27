@@ -42,6 +42,10 @@ export const devroutes: TRoutesDev = {
 		visibleNameRouter: 'Модальное окно для карточки',
 		path: '/dev/modalCard',
 	},
+	CarouselWrapperCustom: {
+		visibleNameRouter: 'Обертка для карусели',
+		path: '/dev/carouselWrapperCustom',
+	},
 	ModalsAuthentically: {
 		visibleNameRouter: 'Модальное окно для авторизации и регистрации',
 		path: '/dev/modalAuthentically',
