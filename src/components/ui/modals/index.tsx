@@ -1,10 +1,10 @@
-import { Form, FormInstance, Modal } from 'antd';
+import { Col, Form, FormInstance, Modal, Row } from 'antd';
 
 import styles from './modals.module.scss';
 import clsx from 'clsx';
 import { MainButton } from '../buttons';
 import { UseCount } from 'src/utils/hooks/useCount';
-import { EyeOutlined, MinusOutlined, PlusOutlined } from '@ant-design/icons';
+import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 import { AuthProps, RegProps } from './constant';
 import { DefaultInput } from '../input';
 import {
@@ -12,11 +12,13 @@ import {
 	IModalCard,
 	IModalFormAuthValues,
 	IModalFormRegValues,
+	IModalNews,
 	IModalsAuthentically,
 } from './types';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectorModalState } from 'src/store/selector';
 import { isCloseModal, isShowModal } from 'src/store/slices/modal-slice';
+import DemoBg from 'src/assets/imgs/bg.title.jpg';
 
 const TextForButtonFromStatus: React.FC<{ status: TStatusUseCount }> = ({
 	status,
@@ -218,6 +220,37 @@ export const ModalsAuthentically: React.FC<IModalsAuthentically> = ({
 					withoutAuthorization="Есть аккаунт"
 				/>
 			</MainButton>
+		</Modal>
+	);
+};
+
+///Modal News
+
+export const ModalNews: React.FC<IModalNews> = ({
+	content,
+	isActive,
+	onExit,
+}) => {
+	return (
+		<Modal
+			className={clsx(styles.modal, styles.modal_news)}
+			open={isActive}
+			onCancel={onExit}
+			footer={false}
+			width={800}
+		>
+			<Row className={styles.content} gutter={[30, 20]}>
+				<Col span={10}>
+					<h2 className={styles.title}>{content.title}</h2>
+					<p className={styles.info}>{content.info}</p>
+					<p className={styles.data}>{content.date}</p>
+				</Col>
+				<Col span={14}>
+					<div className={styles.content_img}>
+						<img src={DemoBg} alt="" />
+					</div>
+				</Col>
+			</Row>
 		</Modal>
 	);
 };
