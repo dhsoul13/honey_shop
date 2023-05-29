@@ -6,3 +6,4 @@ export * from './modals';
 export * from './alerts';
 export * from './carousel';
 export * from './new-card';
+export * from './rating-card';
