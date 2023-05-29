@@ -1,15 +1,10 @@
 import { Button } from 'antd';
-import { ButtonProps } from 'antd/es/button/button';
 import React from 'react';
 
 import styles from './buttons.module.scss';
 import clsx from 'clsx';
-
-interface IMainButton extends ButtonProps {
-	children: React.ReactNode;
-	type?: 'primary' | 'default' | 'link';
-	cn?: string | undefined;
-}
+import { IMainButton, ISliderMain } from './types';
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 
 export const MainButton: React.FC<IMainButton> = ({
 	children,
@@ -22,4 +17,30 @@ export const MainButton: React.FC<IMainButton> = ({
 			{children}
 		</Button>
 	);
+};
+
+export const SliderButton: React.FC<ISliderMain> = ({
+	sliderAction = 'next',
+	linkForSwiper,
+	...props
+}) => {
+	if (sliderAction === 'next') {
+		return (
+			<button
+				className={clsx(styles.slider_main, [...linkForSwiper])}
+				{...props}
+			>
+				<RightOutlined />
+			</button>
+		);
+	} else {
+		return (
+			<button
+				className={clsx(styles.slider_main, [...linkForSwiper])}
+				{...props}
+			>
+				<LeftOutlined />
+			</button>
+		);
+	}
 };

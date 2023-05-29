@@ -6,12 +6,13 @@ import {
 	CarouselWrapperCustoms,
 	NewCard,
 } from 'src/components/ui';
-import { MainButton } from 'src/components/ui/buttons';
+import { MainButton, SliderButton } from 'src/components/ui/buttons';
 import imgs from 'src/assets/imgs/bg.title.jpg';
 import { demoNewsCard } from 'src/shared/constant/demoNewsCard';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { SwiperSlide } from 'swiper/react';
+import { configSlider } from './constant';
 
 export const MainScreen: React.FC = () => {
 	return (
@@ -47,7 +48,11 @@ export const MainScreen: React.FC = () => {
 					<h2 className={styles.title}>Наши новости:</h2>
 					<Row>
 						<Col span={24}>
-							<CarouselWrapperCustoms slidesPerView={3} spaceBetween={'30'}>
+							<div className={styles.slider_btn}>
+								<SliderButton sliderAction={'prev'} linkForSwiper={['btn_1']} />
+								<SliderButton linkForSwiper={['btn_2']} />
+							</div>
+							<CarouselWrapperCustoms {...configSlider}>
 								{demoNewsCard.map((news) => (
 									<SwiperSlide>
 										<NewCard content={news} />
