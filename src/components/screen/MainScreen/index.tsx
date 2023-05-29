@@ -5,13 +5,16 @@ import {
 	CarouselDefault,
 	CarouselWrapperCustoms,
 	NewCard,
+	RatingCard,
 } from 'src/components/ui';
-import { MainButton } from 'src/components/ui/buttons';
+import { MainButton, SliderButton } from 'src/components/ui/buttons';
 import imgs from 'src/assets/imgs/bg.title.jpg';
 import { demoNewsCard } from 'src/shared/constant/demoNewsCard';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { SwiperSlide } from 'swiper/react';
+import { configSlider, configSliderComment } from './constant';
+import { demoRating } from 'src/shared/constant/demoRaiting';
 
 export const MainScreen: React.FC = () => {
 	return (
@@ -42,12 +45,59 @@ export const MainScreen: React.FC = () => {
 					</Col>
 				</Row>
 			</article>
+			<article className={clsx(styles.container, styles.reasons)}>
+				<div className={styles.content}>
+					<h2 className={styles.title}>Почему стоит покупать наш мед:</h2>
+					<Row gutter={[0, 30]} align="middle">
+						<Col span={12} className={styles.text}>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus
+							qui quia corrupti natus, dolorum inventore doloribus repellat eum
+							eos, vitae in, aliquid voluptatem eius hic quos nemo quam quo
+							dolor.
+						</Col>
+						<Col span={12} className={styles.icon_block}>
+							<div className={styles.icon}>1</div>
+						</Col>
+						<Col span={12} className={styles.icon_block}>
+							<div className={styles.icon}>2</div>
+						</Col>
+						<Col span={12} className={styles.text}>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus
+							qui quia corrupti natus, dolorum inventore doloribus repellat eum
+							eos, vitae in, aliquid voluptatem eius hic quos nemo quam quo
+							dolor.
+						</Col>
+						<Col span={12} className={styles.text}>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus
+							qui quia corrupti natus, dolorum inventore doloribus repellat eum
+							eos, vitae in, aliquid voluptatem eius hic quos nemo quam quo
+							dolor.
+						</Col>
+						<Col span={12} className={styles.icon_block}>
+							<div className={styles.icon}>3</div>
+						</Col>
+						<Col span={12} className={styles.icon_block}>
+							<div className={styles.icon}>4</div>
+						</Col>
+						<Col span={12} className={styles.text}>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus
+							qui quia corrupti natus, dolorum inventore doloribus repellat eum
+							eos, vitae in, aliquid voluptatem eius hic quos nemo quam quo
+							dolor.
+						</Col>
+					</Row>
+				</div>
+			</article>
 			<article className={clsx(styles.container, styles.news)}>
 				<div className={styles.content}>
 					<h2 className={styles.title}>Наши новости:</h2>
 					<Row>
 						<Col span={24}>
-							<CarouselWrapperCustoms slidesPerView={3} spaceBetween={'30'}>
+							<div className={styles.slider_btn}>
+								<SliderButton sliderAction={'prev'} linkForSwiper={['btn_1']} />
+								<SliderButton linkForSwiper={['btn_2']} />
+							</div>
+							<CarouselWrapperCustoms {...configSlider}>
 								{demoNewsCard.map((news) => (
 									<SwiperSlide>
 										<NewCard content={news} />
@@ -58,8 +108,29 @@ export const MainScreen: React.FC = () => {
 					</Row>
 				</div>
 			</article>
-			<article className={clsx(styles.container)}>3</article>
-			<article className={clsx(styles.container)}>4</article>
+			<article className={clsx(styles.container, styles.comments)}>
+				<div className={styles.content}>
+					<h2 className={styles.title}>Отзывы о нашей продукции:</h2>
+					<Row className={styles.commet_slider}>
+						<Col span={24}>
+							<div className={styles.slider_btn}>
+								<SliderButton
+									sliderAction={'prev'}
+									linkForSwiper={['btn_1_c']}
+								/>
+								<SliderButton linkForSwiper={['btn_2_c']} />
+							</div>
+							<CarouselWrapperCustoms {...configSliderComment}>
+								{demoRating.map((comment) => (
+									<SwiperSlide>
+										<RatingCard content={comment} />
+									</SwiperSlide>
+								))}
+							</CarouselWrapperCustoms>
+						</Col>
+					</Row>
+				</div>
+			</article>
 		</section>
 	);
 };

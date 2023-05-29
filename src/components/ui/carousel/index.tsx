@@ -28,9 +28,5 @@ export const CarouselWrapperCustoms: React.FC<ICarouselWrapperCustoms> = ({
 	children,
 	...props
 }) => {
-	return (
-		<Swiper modules={[Virtual]} virtual {...props}>
-			{children}
-		</Swiper>
-	);
+	return <Swiper {...props}>{children}</Swiper>;
 };

@@ -49,4 +49,43 @@
 }
 
 .news {
+	.slider_btn {
+		display: flex;
+		justify-content: end;
+		gap: 10px 10px;
+		margin-bottom: 15px;
+	}
+}
+
+.reasons {
+	.text {
+		font-size: 16px;
+	}
+	.icon_block {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: $primary;
+		width: 200px;
+		height: 200px;
+		font-size: 50px;
+		font-weight: 700;
+		border-radius: 30px;
+	}
+}
+
+.comments {
+	.commet_slider {
+	}
+	.slider_btn {
+		margin-bottom: 20px;
+		display: flex;
+		justify-content: end;
+		gap: 10px;
+	}
 }

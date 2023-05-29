@@ -26,3 +26,14 @@ interface IRequestNews {
 	img?: Array<string>;
 	date: string;
 }
+
+////
+interface IRequestComments {
+	id: string | number;
+	id_product: string | number;
+	id_user: string | number;
+	comment: string;
+	img?: Array<string>;
+	date: string;
+	rating: string | number;
+}

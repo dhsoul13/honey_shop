@@ -42,3 +42,43 @@
 		}
 	}
 }
+
+.slider_main {
+	background-color: $primary;
+	border: none;
+	width: 50px;
+	height: 50px;
+	transition: $effect;
+	border-radius: 5px;
+
+	:global(.anticon) {
+		font-size: 25px;
+		font-weight: 700;
+	}
+	&:hover {
+		border: none;
+		transition: $effect;
+		background-color: $secondary;
+		:global(.anticon) {
+			color: $primary;
+		}
+	}
+
+	&:active {
+		border: none;
+		transition: $effect;
+		background-color: $secondary;
+		:global(.anticon) {
+			color: $primary;
+		}
+	}
+
+	&:focus {
+		border: none;
+		transition: $effect;
+		background-color: $secondary;
+		:global(.anticon) {
+			color: $primary;
+		}
+	}
+}
