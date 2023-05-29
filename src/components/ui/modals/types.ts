@@ -42,3 +42,11 @@ export interface IRegProps {
 	type: 'text' | 'password';
 	rules?: Rule[] | undefined;
 }
+
+// ///Modal Card
+
+export interface IModalNews {
+	content: IRequestNews;
+	isActive: boolean;
+	onExit: () => void;
+}
