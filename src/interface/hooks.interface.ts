@@ -21,7 +21,7 @@ type TUseRedirect = () => {
 
 ///
 
-type TUseModalNews = () => {
+type TUseModal = () => {
 	isActive: boolean;
 	changeActiveOnClickAlerts: () => void;
 };

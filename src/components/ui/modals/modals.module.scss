@@ -162,3 +162,62 @@
 		}
 	}
 }
+
+.modal_rating {
+	padding: 20px;
+	.rating_main {
+		margin-top: 30px;
+		display: grid;
+		grid-template-columns: 80px 1fr;
+		margin-bottom: 15px;
+		gap: 0px 15px;
+		min-height: 80px;
+	}
+	.rating_number {
+		background-color: $primary;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 80px;
+
+		h2 {
+			font-size: 30px;
+		}
+
+		svg {
+			font-size: 30px;
+		}
+	}
+
+	.rating_info_list {
+		display: flex;
+		flex-direction: column;
+		gap: 10px 0px;
+		background-color: $primary;
+		border-radius: 30px;
+		padding: 20px;
+	}
+
+	.rating_elem {
+		display: flex;
+		align-items: center;
+
+		svg {
+			font-size: 30px;
+			margin-right: 10px;
+		}
+	}
+
+	.comment {
+		h3 {
+			margin-bottom: 10px;
+			font-size: 20px;
+		}
+		p {
+			font-weight: 400;
+			word-break: break-all;
+			margin-bottom: 20px;
+		}
+	}
+}

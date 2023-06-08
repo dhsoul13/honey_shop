@@ -5,7 +5,7 @@ import { Col, Divider, Row } from 'antd';
 import clsx from 'clsx';
 import { MainButton } from '../buttons';
 import { ModalNews } from '../modals';
-import { useModalNews } from 'src/utils/hooks/useModalNews';
+import { useModal } from 'src/utils/hooks/useModalNews';
 
 const HiddenOtherText: React.FC<{ text: string; onExit: () => void }> = ({
 	text,
@@ -25,7 +25,7 @@ const HiddenOtherText: React.FC<{ text: string; onExit: () => void }> = ({
 };
 
 export const NewCard: React.FC<INewCard> = ({ content }) => {
-	const { isActive, changeActiveOnClickAlerts } = useModalNews();
+	const { isActive, changeActiveOnClickAlerts } = useModal();
 	return (
 		<>
 			<ModalNews

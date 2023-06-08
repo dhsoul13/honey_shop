@@ -50,3 +50,10 @@ export interface IModalNews {
 	isActive: boolean;
 	onExit: () => void;
 }
+
+// ///Modal Rating
+
+export interface IModalRating {
+	isActive: boolean;
+	onExit: () => void;
+}
