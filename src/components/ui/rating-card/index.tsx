@@ -3,6 +3,8 @@ import { IRatingCard } from './types';
 import styles from './ratingCard.module.scss';
 import { Col, Row } from 'antd';
 import { MainButton } from '../buttons';
+import { ModalRating } from '../modals';
+import { useModal } from 'src/utils/hooks/useModalNews';
 
 const HiddenOtherText: React.FC<{ text: string; onExit?: () => void }> = ({
 	text,
@@ -22,8 +24,11 @@ const HiddenOtherText: React.FC<{ text: string; onExit?: () => void }> = ({
 };
 
 export const RatingCard: React.FC<IRatingCard> = ({ content }) => {
+	const { isActive, changeActiveOnClickAlerts } = useModal();
+
 	return (
 		<Row className={styles.wrapper_card} key={content.id} gutter={[0, 10]}>
+			<ModalRating isActive={isActive} onExit={changeActiveOnClickAlerts} />
 			<Col span={24} className={styles.person_info}>
 				<div className={styles.rating}>{content.rating}</div>
 				<div className={styles.main_info}>

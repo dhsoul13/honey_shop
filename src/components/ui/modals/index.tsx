@@ -4,11 +4,18 @@ import styles from './modals.module.scss';
 import clsx from 'clsx';
 import { MainButton } from '../buttons';
 import { UseCount } from 'src/utils/hooks/useCount';
-import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
+import {
+	MinusOutlined,
+	PlusOutlined,
+	ShoppingOutlined,
+	StarOutlined,
+	UserOutlined,
+} from '@ant-design/icons';
 import { AuthProps, RegProps } from './constant';
 import { DefaultInput } from '../input';
 import {
 	IContentFromType,
+	IModalRating,
 	IModalCard,
 	IModalFormAuthValues,
 	IModalFormRegValues,
@@ -248,6 +255,50 @@ export const ModalNews: React.FC<IModalNews> = ({
 				<Col span={14}>
 					<div className={styles.content_img}>
 						<img src={DemoBg} alt="" />
+					</div>
+				</Col>
+			</Row>
+		</Modal>
+	);
+};
+
+/// Modal Rating
+
+export const ModalRating: React.FC<IModalRating> = ({ isActive, onExit }) => {
+	return (
+		<Modal
+			className={clsx(styles.modal, styles.modal_rating)}
+			open={isActive}
+			onCancel={onExit}
+			footer={false}
+			width={800}
+		>
+			<Row className={styles.content} gutter={[30, 20]}>
+				<Col span={24}>
+					<div className={styles.rating_main}>
+						<div className={styles.rating_number}>
+							<h2>4</h2>
+							<StarOutlined />
+						</div>
+						<div className={styles.rating_info_list}>
+							<div className={styles.rating_elem}>
+								<UserOutlined />
+								<h2>Даниил М</h2>
+							</div>
+							<div className={styles.rating_elem}>
+								<ShoppingOutlined />
+								<h2>Мед липовый</h2>
+							</div>
+						</div>
+					</div>
+					<div className={styles.comment}>
+						<h3>Комментарий:</h3>
+						<p>
+							Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+							Excepturi accusamus consectetur id. Natus facere quisquam tenetur
+							voluptatibus cum. Dolorem, inventore hic velit quaerat consequatur
+							nihil nostrum ea vitae. Officia, alias!
+						</p>
 					</div>
 				</Col>
 			</Row>
